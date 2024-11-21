@@ -1,7 +1,144 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css");
+
 :root {
-  box-sizing: border-box;
+  --shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
-font-face {
-  font-family: "Roboto";
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin-inline: auto;
+  font-family: "Roboto", "Arial";
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem);
+}
+
+.underlay {
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(170deg, #9ad3ff 50%, #00000000 50%);
+  /* background-repeat: no-repeat; */
+  height: 70%;
+  width: 100vw;
+  margin-top: -2rem;
+  filter: drop-shadow(var(--shadow));
+}
+
+.container {
+  position: relative;
+  margin: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me {
+  padding: 1px;
+  max-width: 70%;
+  position: relative;
+  z-index: 1;
+  margin-left: -1px;
+}
+
+.about-me-icons {
+  font-size: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-text {
+  color: rgb(116, 116, 116);
+  padding: 4rem 2rem 2rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+
+}
+.about-text h2 {
+  color: black;
+  margin-bottom: 1rem;
+}
+
+i {
+  color: black;
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tablet layout: Float image */
+@media (max-width: 769px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .about-me {
+    max-width: 100%;
+  }
+
+  .about-text {
+    box-shadow: none;
+    padding: 2rem 2rem;
+    background-color: transparent;
+  }
+
+  .about-text h2 {
+   text-align: center;
+  }
+
+  .about-me-icons {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+/* Tablet layout: Float image */
+@media (min-width: 769px) and (max-width: 1263px) {
+  .header {
+    display: block;
+  }
+  .about-me {
+
+    z-index: 1;
+    max-width: 100%;
+  }
+  .about-me h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .about-me-icons {
+    display: none;
+  }
+
+  .about-text {
+    margin-top: 8rem;
+    margin-left: 3rem;
+    line-height: 1.8rem;
+    padding: 5rem 2rem;
+  }
+
+  img,
+  picture {
+    float: left;
+    z-index: 2;
+    max-width: 400px;
+    height: auto;
+    margin: 1.5rem 1.5rem .5rem 0px;
+  }
 }
